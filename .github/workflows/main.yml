@@ -1,33 +1,35 @@
 name: workflow1
 
-on:
- push:
-  branches:
-  - main
-  - dev
-
+on: 
+  push:
+    branches:
+    - main
+    - dev
+  workflow_dispatch:
+  
 jobs:
- job1:
-  runs-on: ubuntu-latest
-  steps:
-   - name: task 1 for printing OS details
-     run: uname -a
-   - name: task2 to print hostname
-     run: hostname
-   - name: step 3
-     run: sleep 30
-   - name: step 4
-     run: echo "Job1 and Step4 completed"
-
- job2:
-  runs-on: ubuntu-latest
-  steps:
-   - name: task 1 for printing OS details
-     run: uname -a
-   - name: task2 to print hostname
-     run: hostname
-   - name: step 3
-     run: sleep 30
-   - name: step 4
-     run: echo "Job2 and Step4 completed"
-     
+  build-job:
+     runs-on: gagan-devops
+     steps:
+       - name: task 1 for printing OS details
+         run: uname -a
+       - name: task2 to print hostname
+         run: hostname 
+       - name: step 3
+         run: sleep 30
+       - name: step 4 
+         run: |
+           echo "build job and step 4 of job 1 completed"
+           touch /tmp/gagand
+  test-job:
+     runs-on: ubuntu-latest
+     steps:
+       - name: task 1 for printing OS details
+         run: uname -a
+       - name: task2 to print hostname
+         run: hostname 
+       - name: step 3
+         run: sleep 30
+       - name: step 4 
+         run: echo "Test-job and step 4 of test-job completed"
+        
