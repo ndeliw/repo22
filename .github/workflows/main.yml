@@ -17,7 +17,7 @@ jobs:
    - name: step 3
      run: sleep 30
    - name: step 4
-     run: echo :Job1 and Step4 completed"
+     run: echo "Job1 and Step4 completed"
 
  job2:
   runs-on: ubuntu-latest
@@ -29,5 +29,5 @@ jobs:
    - name: step 3
      run: sleep 30
    - name: step 4
-     run: echo :Job2 and Step4 completed"
+     run: echo "Job2 and Step4 completed"
      
