@@ -1,10 +1,10 @@
-   name: workflow3
-   on: 
-   push:
+name: notification
+on:
+  push:
     branches:
       - main
 
-   jobs:
+jobs:
     build:
      runs-on: ubuntu-latest
      steps:
